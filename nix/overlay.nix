@@ -1,6 +1,6 @@
 final: prev:
 (with builtins; seq ((hasAttr "inputs" prev) || throw "If you are calling this directly, make sure the overlays have an `inputs` attribute conforming to the flakes interface."))
-({
+{
   #TODO specified as _At least_ 512
   luna = prev.libsForQt512.callPackage ({ wrapQtAppsHook, qtbase, qttools, mkDerivation, python38 }: mkDerivation {
     pname = "luna";
@@ -10,12 +10,7 @@ final: prev:
 
     buildInputs = with prev; [ qtbase qttools eigen boost ];
     propagatedBuildInputs = [ python38 ];
-    nativeBuildInputs = with prev; [ wrapQtAppsHook cmake ninja];
-    cmakeFlags = [
-      "-DCMAKE_BUILD_TYPE=Debug"
-      # "-DUseCPPCHECK=ON"
-      # "-DUseCLANGTIDY=ON"
-      ];
+    nativeBuildInputs = with prev; [ wrapQtAppsHook cmake ninja ];
 
     patchPhase = ''
       substituteInPlace CMakeLists.txt --replace 'include(Packing)' '''
@@ -25,8 +20,7 @@ final: prev:
       substituteInPlace CMakeLists.txt --replace 'DESTINATION ''${LUNA_INSTALL_PREFIX}/bin)' "DESTINATION $out/bin)"
       '';
 
-    postBuild = ''
-      mkdir -p $out/bin
-      '';
-    }) {};
-  })
+    # broken as tools/doctool is used before it is being built
+    enableParallelBuilding = false;
+  }) {};
+}
