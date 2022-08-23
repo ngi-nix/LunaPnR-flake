@@ -32,10 +32,27 @@
         "type": "github"
       }
     },
+    "opensta": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1661197194,
+        "narHash": "sha256-TlgbeHh+BFGNlTd/A4Sl8pRuGtM/Ep+lmWn9cz6bBgw=",
+        "owner": "The-OpenROAD-Project",
+        "repo": "OpenSTA",
+        "rev": "bb50746f72ab112819570abce352684f9114f624",
+        "type": "github"
+      },
+      "original": {
+        "owner": "The-OpenROAD-Project",
+        "repo": "OpenSTA",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "luna": "luna",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "opensta": "opensta"
       }
     }
   },
