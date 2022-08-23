@@ -1,8 +1,7 @@
 final: prev:
 (with builtins; seq ((hasAttr "inputs" prev) || throw "If you are calling this directly, make sure the overlays have an `inputs` attribute conforming to the flakes interface."))
 {
-  #TODO specified as _At least_ 512
-  luna = prev.libsForQt512.callPackage ({ wrapQtAppsHook, qtbase, qttools, mkDerivation, python38 }: mkDerivation {
+  luna = prev.libsForQt5.callPackage ({ wrapQtAppsHook, qtbase, qttools, mkDerivation, python38 }: mkDerivation {
     pname = "luna";
     version =
       let
