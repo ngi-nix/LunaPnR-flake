@@ -19,12 +19,13 @@ final: prev:
     nativeBuildInputs = with prev; [ wrapQtAppsHook cmake ninja ];
 
     patchPhase = ''
-      substituteInPlace CMakeLists.txt --replace 'include(Packing)' '''
-      substituteInPlace CMakeLists.txt --replace 'enable_testing()' '''
-      substituteInPlace test/core/CMakeLists.txt --replace 'enable_testing()' '''
-      substituteInPlace CMakeLists.txt --replace 'add_subdirectory(test)' '''
-      substituteInPlace CMakeLists.txt --replace 'DESTINATION ''${LUNA_INSTALL_PREFIX}/bin)' "DESTINATION $out/bin)"
-      '';
+      substituteInPlace CMakeLists.txt \
+        --replace 'enable_testing()' ''' \
+        --replace 'add_subdirectory(test)' ''' \
+        --replace 'DESTINATION ''${LUNA_INSTALL_PREFIX}/bin)' "DESTINATION $out/bin)"
+      substituteInPlace test/core/CMakeLists.txt \
+        --replace 'enable_testing()' '''
+    '';
 
     # broken as tools/doctool is used before it is being built
     enableParallelBuilding = false;
