@@ -4,7 +4,14 @@ final: prev:
   #TODO specified as _At least_ 512
   luna = prev.libsForQt512.callPackage ({ wrapQtAppsHook, qtbase, qttools, mkDerivation, python38 }: mkDerivation {
     pname = "luna";
-    version = "unstable-2021-10-19";
+    version =
+      let
+        inherit (prev.inputs.luna) lastModifiedDate;
+        year = builtins.substring 0 4 lastModifiedDate;
+        month = builtins.substring 4 2 lastModifiedDate;
+        day = builtins.substring 6 2 lastModifiedDate;
+      in
+        "unstable-${year}-${month}-${day}";
 
     src = final.inputs.luna;
 
