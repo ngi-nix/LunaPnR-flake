@@ -6,7 +6,10 @@
 
     luna.url = "github:asicsforthemasses/LunaPnR";
     luna.flake = false; #TODO
-    };
+
+    opensta.url = "github:The-OpenROAD-Project/OpenSTA";
+    opensta.flake = false;
+  };
 
   outputs = { nixpkgs, ... }@inputs:
   let

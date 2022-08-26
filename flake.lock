@@ -3,11 +3,11 @@
     "luna": {
       "flake": false,
       "locked": {
-        "lastModified": 1650873767,
-        "narHash": "sha256-Kg2jIRC3jqnNnmpHCI6DhUXg/wB56deS3/kHw7ktMts=",
+        "lastModified": 1661258287,
+        "narHash": "sha256-SEtkvHaOUSthLH1LK5ikz2tx72deMRsdmrzeDlO1jaw=",
         "owner": "asicsforthemasses",
         "repo": "LunaPnR",
-        "rev": "dd27f40d11907a6a48d0ce081b8175710e9d0f01",
+        "rev": "13965805eb11f209273a8a7bfd7e789172cab1a5",
         "type": "github"
       },
       "original": {
@@ -18,11 +18,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1659889440,
-        "narHash": "sha256-O8+FsHZzQIqjQjuh+VXbJtGrpPswm5ta2Z/eo72Lz2U=",
+        "lastModified": 1661239211,
+        "narHash": "sha256-pNJzBlSNpWEiFJZnLF2oETYq8cGWx1DJPW33aMtG6n8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4bdf4169ad2896236895ca607a843f30c9680345",
+        "rev": "5e804cd8a27f835a402b22e086e36e797716ef8b",
         "type": "github"
       },
       "original": {
@@ -32,10 +32,27 @@
         "type": "github"
       }
     },
+    "opensta": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1661197194,
+        "narHash": "sha256-TlgbeHh+BFGNlTd/A4Sl8pRuGtM/Ep+lmWn9cz6bBgw=",
+        "owner": "The-OpenROAD-Project",
+        "repo": "OpenSTA",
+        "rev": "bb50746f72ab112819570abce352684f9114f624",
+        "type": "github"
+      },
+      "original": {
+        "owner": "The-OpenROAD-Project",
+        "repo": "OpenSTA",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "luna": "luna",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "opensta": "opensta"
       }
     }
   },
